@@ -27,7 +27,7 @@ public class TodoServiceImpl implements TodoService {
 		if(todoOptional.isPresent()) {
 			throw new TodoCollectionException(TodoCollectionException.TodoAlreadyExists());
 		}else {
-			todo.setCreatedAt(new Date(System.currentTimeMillis()));
+			todo.setCreatedAt(new Date(System.currentTimeMillis()));		
 		}
 	}
 
