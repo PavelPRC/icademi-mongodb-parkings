@@ -1,6 +1,8 @@
 package fr.icademie.gestionparking.mongodb.service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.ConstraintViolationException;
@@ -26,6 +28,16 @@ public class ReservationServiceImpl implements ReservationService {
 		}else {
 			Date dateNow = new Date(System.currentTimeMillis());
 			reservation.setHeureCreation(dateNow.toString());		
+		}
+	}
+
+	@Override
+	public List<Reservation> getAllReservations() {
+		List<Reservation> reservations = reservationRepo.findAll();
+		if(reservations.size() > 0) {
+			return reservations;
+		}else {
+			return new ArrayList<Reservation>();
 		}
 	}
 }

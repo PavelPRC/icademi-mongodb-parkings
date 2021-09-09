@@ -41,7 +41,7 @@ public class ParkingController {
 	private ParkingService parkingService;
 	
 	@GetMapping("/parkings")
-	public ResponseEntity<?> getAllTodos(){
+	public ResponseEntity<?> getAllParkings(){
 		//List<TodoDTO> todos = todoRepo.findAll();
 		List<Parking> parkings = parkingService.getAllParkings();
 		/* this condition is handled in Service layer
